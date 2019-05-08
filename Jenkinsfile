@@ -4,7 +4,7 @@ pipeline {
         stage('git_clone_demo') {
             steps {
                 echo 'Hello world!' 
-                git credentialsId: '8354138e-1feb-4472-b9d8-dafd0a5f3c95', url: 'https://github.com/rachamaduguudaykumar/uday.git''
+                git credentialsId: '8354138e-1feb-4472-b9d8-dafd0a5f3c95', url: 'https://github.com/rachamaduguudaykumar/uday.git'
             }
         }
     stage('Build') {
