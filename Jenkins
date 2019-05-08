@@ -1,13 +1,6 @@
 pipeline {
     agent { label 'master' }
-    stages {
-        stage('git_clone_demo') {
-            steps {
-                echo 'Hello world!' 
-              
-            }
-        }
-    stage('Build') {
+       stage('Build') {
         steps {
             echo 'helloword'
             sh '''
