@@ -1,10 +1,10 @@
 pipeline {
-    agent { label 'master' }
+    agent { label 'slave2' }
     stages {
         stage('git_clone_demo') {
             steps {
                 echo 'Hello world!' 
-               
+                url: 'https://github.com/redprasa/DEMO2.git'
             }
         }
     }
