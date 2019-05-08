@@ -1,0 +1,11 @@
+pipeline {
+    agent { label 'slave2' }
+    stages {
+        stage('git_clone_demo') {
+            steps {
+                echo 'Hello world!' 
+               
+            }
+        }
+    }
+}
