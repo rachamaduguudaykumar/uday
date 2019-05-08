@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'master' }
     stages {
-        stage('git_clone_demo') {
+        stage('git_clone_https://github.com/rachamaduguudaykumar/uday.git') {
             steps {
                 echo 'Hello world!' 
              
