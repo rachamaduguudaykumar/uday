@@ -9,7 +9,7 @@ pipeline {
         }
     stage('Build') {
         steps {
-            echo 'helloword'
+            echo 'helloworld'
             sh '''
             mvn clean
             mvn compile
@@ -20,22 +20,22 @@ pipeline {
     }
     stage('Unittests') {
         steps {
-            echo 'helloword'
+            echo 'helloworld'
         }
     }
     stage('sonar') {
         steps {
-            echo 'helloword'
+            echo 'helloworld'
         }
     }
     stage('artifactory') {
         steps {
-            echo 'helloword'
+            echo 'helloworld'
         }
     }
     stage('deploy') {
         steps {
-            echo 'helloword'
+            echo 'helloworld'
         }
     }
     }
