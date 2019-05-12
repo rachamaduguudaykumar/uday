@@ -1,42 +1,23 @@
 pipeline {
-    agent { label 'master' }
+    agent any 
     stages {
-        stage('git_clone_demo') {
+        stage('master') { 
             steps {
-                echo 'Hello world!' 
-                git credentialsId: '8354138e-1feb-4472-b9d8-dafd0a5f3c95', url: 'https://github.com/rachamaduguudaykumar/uday.git'
+                echo 'Taking code fron Git hub' 
+                git "https://github.com/jfrog/project-examples.git/"
+                echo 'code taken'
             }
         }
-    stage('Build') {
-        steps {
-            echo 'helloword'
-            sh '''
-            mvn clean
-            mvn compile
-            mvn test
-            mvn package
-            '''
+        stage('build') { 
+            steps {
+                echo 'creating text file'
+                writeFile file: 'demo.txt',text: 'Working with files the Groovy way is easy.'
+            }
         }
-    }
-    stage('Unittests') {
-        steps {
-            echo 'helloword'
+        stage('Deploy') { 
+            steps {
+                echo 'deploying to container' 
+            }
         }
-    }
-    stage('sonar') {
-        steps {
-            echo 'helloword'
-        }
-    }
-    stage('artifactory') {
-        steps {
-            echo 'helloword'
-        }
-    }
-    stage('deploy') {
-        steps {
-            echo 'helloword'
-        }
-    }
     }
 }
